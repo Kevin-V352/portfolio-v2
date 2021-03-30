@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
     padding: 0;
     margin: 0;
+    background-color: #26282B;
   };
 `;
 

@@ -31,7 +31,7 @@ const initialStateFrame: string = `
 const secondaryStateFrame: string = `
   height: 100%;
   width: 100%;
-  border: var(--orange) solid .25vw;
+  border: var(--orange) solid .2vw;
   transition: height 170ms linear, width 170ms linear 170ms;
 `;
 
