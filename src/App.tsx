@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function App() {
-  return (
-    <div>
-      gola
-    </div>
-  );
+  return <div>gola</div>;
 }
 
 export default App;
