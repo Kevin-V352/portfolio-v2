@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-function App() {
-  return <div>gola</div>;
-}
+import NavBar from './components/nav-bar/nav-bar';
+
+import GlobalStyles from './shared/styles/global-styles';
+
+const App: FC = (): JSX.Element => {
+  return (
+    <>
+      <NavBar />
+      <GlobalStyles />
+    </>
+  );
+};
 
 export default App;
