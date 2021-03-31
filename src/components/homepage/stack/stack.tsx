@@ -37,7 +37,7 @@ const Stack: FC = (): JSX.Element => {
   return (
     <S.Container>
       <S.Column>
-        <S.Title>Tecnologias</S.Title>
+        <S.Title>Tecnologías</S.Title>
         <S.IconContainer>
           {stackIcons.map((item: ArrStyledComponent, index: number) => (
             <div

@@ -147,6 +147,10 @@ export const Container = styled.nav`
       }
     }
   }
+  //Styles when the virtual keyboard is displayed
+  @media (max-width: 1025px) and (orientation: landscape) {
+    display: none;
+  }
 `;
 
 export const CodeBranchIcon = styled(BiGitBranch)`
