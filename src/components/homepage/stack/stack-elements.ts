@@ -24,8 +24,13 @@ export const Container = styled.section`
 `;
 
 export const Column = styled.div`
-  height: 90vh;
   width: 90%;
+  //Screen smaller than 1025px - mobile
+  height: 80vh;
+  //Screen greater than 1025px - desktop
+  @media (min-width: 1025px) {
+    height: 90vh;
+  }
 `;
 
 export const Title = styled.h2`
