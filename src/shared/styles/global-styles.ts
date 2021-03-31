@@ -2,9 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --big-font-size: 2vw;
-    --normal-font-size: 1vw;
-    --small-font-size: .875vw;
+    --big-font-size: 10vw;
+    --normal-font-size: 3vw;
     
     //Global colors
     --black: #1C1C1C;
@@ -16,6 +15,11 @@ const GlobalStyles = createGlobalStyle`
     //Global transitions
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
+
+    @media (min-width: 1025px) {
+      --big-font-size: 2vw;
+      --normal-font-size: 1vw;
+    }
   };
   body {
     font-family: 'Quicksand', sans-serif;
