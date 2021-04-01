@@ -41,7 +41,12 @@ const Stack: FC = (): JSX.Element => {
         <S.Title>Tecnologías</S.Title>
         <S.IconContainer>
           {stackIcons.map((item: ArrStyledComponent, index: number) => (
-            <AnimationBox key={index} type='fade-down' delay={`${index}00`}>
+            <AnimationBox
+              key={index}
+              type='fade-down'
+              delay={`${index}00`}
+              fullContent={false}
+            >
               <S.IconBox
                 fontColor={item.color}
                 active={index === activeIndex ? true : false}

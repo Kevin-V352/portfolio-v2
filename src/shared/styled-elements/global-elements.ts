@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface ABProps {
   type: string;
   delay: string;
+  fullContent: boolean;
 }
 
 export const AnimationBox = styled.div.attrs<ABProps>(({ type, delay }) => ({
@@ -11,4 +12,6 @@ export const AnimationBox = styled.div.attrs<ABProps>(({ type, delay }) => ({
   'data-aos-easing': type,
   'data-aos-delay': delay,
   'data-aos-duration': '500',
-}))<ABProps>``;
+}))<ABProps>`
+  ${({ fullContent }) => (fullContent ? 'width: 100%; heigth: 100%' : null)}
+`;

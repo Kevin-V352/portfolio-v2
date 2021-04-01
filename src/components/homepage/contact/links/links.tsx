@@ -47,7 +47,12 @@ const Links: FC = () => {
   return (
     <S.Container>
       {arrLink.map((item: StyledComponentLink, index: number) => (
-        <AnimationBox key={index} type='fade-left' delay={`${index}00`}>
+        <AnimationBox
+          key={index}
+          type='fade-left'
+          delay={`${index}00`}
+          fullContent={true}
+        >
           <S.IconLink
             fontColor={item.color}
             active={index === activeIndex ? true : false}
