@@ -8,3 +8,10 @@ export interface ArrStyledComponent {
   component: any;
   color: string;
 }
+
+export interface StyledComponentLink {
+  name: string;
+  component: any;
+  color: string;
+  link: string;
+}

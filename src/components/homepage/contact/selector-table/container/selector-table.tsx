@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import * as S from './selector-table-elements';
 
 import Form from '../form/form';
+import Links from '../links/links';
 
 const SelectorTable: FC = (): JSX.Element => {
   const [indexTab, setIndexTab] = useState<number>(0);
@@ -50,7 +51,7 @@ const SelectorTable: FC = (): JSX.Element => {
           </CSSTransition>
         ) : (
           <CSSTransition key={2} timeout={200} classNames='fade'>
-            <div>lola</div>
+            <Links />
           </CSSTransition>
         )}
       </TransitionGroup>
