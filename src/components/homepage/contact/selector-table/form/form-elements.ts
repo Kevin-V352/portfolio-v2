@@ -73,7 +73,7 @@ export const SubmitButton = styled.button`
   text-transform: uppercase;
   transition: var(--transition-fast);
   &:active {
-    transform: scale(0.8);
+    transform: scale(0.95);
     border-color: var(--orange);
     color: var(--orange);
   }

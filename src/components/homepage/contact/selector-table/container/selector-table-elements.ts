@@ -47,6 +47,7 @@ export const OptionMaker = styled.div`
   position: absolute;
   border-bottom: 0.5vh solid var(--orange);
   transition: var(--transition-normal);
+  bottom: 0;
 `;
 
 export const TransitionBox = styled.div`
