@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
-import { StyledComponentLink } from '../../../../../shared/interfaces/global-interfaces';
+import { StyledComponentLink } from '../../../../shared/interfaces/global-interfaces';
+import { AnimationBox } from '../../../../shared/styled-elements/global-elements';
 
 import * as S from './links-elements';
 
@@ -46,15 +47,16 @@ const Links: FC = () => {
   return (
     <S.Container>
       {arrLink.map((item: StyledComponentLink, index: number) => (
-        <S.IconLink
-          key={index}
-          fontColor={item.color}
-          active={index === activeIndex ? true : false}
-          href={item.link}
-        >
-          {item.component}
-          <S.IconName>{item.name}</S.IconName>
-        </S.IconLink>
+        <AnimationBox key={index} type='fade-left' delay={`${index}00`}>
+          <S.IconLink
+            fontColor={item.color}
+            active={index === activeIndex ? true : false}
+            href={item.link}
+          >
+            {item.component}
+            <S.IconName>{item.name}</S.IconName>
+          </S.IconLink>
+        </AnimationBox>
       ))}
     </S.Container>
   );

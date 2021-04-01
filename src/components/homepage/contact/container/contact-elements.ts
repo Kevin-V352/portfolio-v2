@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
+//GridItem Props
+interface GIProps {
+  position: string;
+}
+
 export const Container = styled.section`
   min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   //Styles when the virtual keyboard is displayed
   @media (max-width: 1025px) and (orientation: landscape) {
     align-items: flex-end;
@@ -13,6 +19,9 @@ export const Container = styled.section`
 
 export const Column = styled.div`
   width: 90%;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: 10% 90%;
   //Screen smaller than 1025px - mobile
   height: 80vh;
   //Screen greater than 1025px - desktop
@@ -37,4 +46,9 @@ export const Title = styled.h2`
   @media (max-width: 1025px) and (orientation: landscape) {
     display: none;
   }
+`;
+
+export const GridItem = styled.div`
+  /* border: red solid 1px; */
+  grid-column: ${(props: GIProps) => props.position};
 `;

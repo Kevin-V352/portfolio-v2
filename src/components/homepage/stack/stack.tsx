@@ -3,6 +3,7 @@ import React, { FC, useState, useEffect } from 'react';
 import * as S from './stack-elements';
 
 import { ArrStyledComponent } from '../../../shared/interfaces/global-interfaces';
+import { AnimationBox } from '../../../shared/styled-elements/global-elements';
 
 const Stack: FC = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -40,13 +41,7 @@ const Stack: FC = (): JSX.Element => {
         <S.Title>Tecnologías</S.Title>
         <S.IconContainer>
           {stackIcons.map((item: ArrStyledComponent, index: number) => (
-            <div
-              key={index}
-              data-aos='fade-down'
-              data-aos-easing='fade-up'
-              data-aos-duration='500'
-              data-aos-delay={`${index}00`}
-            >
+            <AnimationBox key={index} type='fade-down' delay={`${index}00`}>
               <S.IconBox
                 fontColor={item.color}
                 active={index === activeIndex ? true : false}
@@ -54,7 +49,7 @@ const Stack: FC = (): JSX.Element => {
                 {item.component}
                 <S.IconName>{item.name}</S.IconName>
               </S.IconBox>
-            </div>
+            </AnimationBox>
           ))}
         </S.IconContainer>
       </S.Column>
