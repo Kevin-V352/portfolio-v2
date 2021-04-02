@@ -51,7 +51,8 @@ const Links: FC = () => {
           key={index}
           type='fade-left'
           delay={`${index}00`}
-          fullContent={true}
+          fullContent={false}
+          center={true}
         >
           <S.IconLink
             fontColor={item.color}

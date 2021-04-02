@@ -10,7 +10,7 @@ import GlobalStyles from './shared/styles/global-styles';
 const App: FC = (): JSX.Element => {
   useEffect(() => {
     AOS.init({
-      duration: 200,
+      duration: 500,
     });
   }, []);
 

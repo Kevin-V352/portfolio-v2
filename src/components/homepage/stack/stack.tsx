@@ -38,7 +38,13 @@ const Stack: FC = (): JSX.Element => {
   return (
     <S.Container>
       <S.Column>
-        <S.Title>Tecnologías</S.Title>
+        <S.GridItem
+          data-aos='fade-down'
+          data-aos-easing='fade-down'
+          data-aos-delay='100'
+        >
+          <S.Title>Tecnologías</S.Title>
+        </S.GridItem>
         <S.IconContainer>
           {stackIcons.map((item: ArrStyledComponent, index: number) => (
             <AnimationBox
@@ -46,6 +52,7 @@ const Stack: FC = (): JSX.Element => {
               type='fade-down'
               delay={`${index}00`}
               fullContent={false}
+              center={false}
             >
               <S.IconBox
                 fontColor={item.color}

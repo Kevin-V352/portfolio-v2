@@ -31,6 +31,13 @@ export const Column = styled.div`
   @media (min-width: 1025px) {
     height: 90vh;
   }
+  display: grid;
+  grid-template-rows: 10% 90%;
+`;
+
+export const GridItem = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Title = styled.h2`
@@ -45,14 +52,16 @@ export const Title = styled.h2`
 
 export const IconContainer = styled.div`
   display: grid;
-  justify-items: center;
-  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: calc(100% - (var(--big-font-size) + 1.6vh));
-  grid-template-columns: repeat(4, 25%);
+  height: 100%;
+  grid-template-columns: repeat(4, 22%);
 `;
 
 export const IconBox = styled.div`
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
