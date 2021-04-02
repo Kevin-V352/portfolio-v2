@@ -35,7 +35,19 @@ export const Image = styled.img`
   height: 100%;
   width: 100%;
   grid-column: 1/4;
-  border-radius: 0.5vw;
+  border-radius: 0.5vw 0.5vw 0 0;
+`;
+
+export const YoutubePlayer = styled.iframe.attrs({
+  title: 'YouTube video player',
+  allow:
+    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
+})`
+  height: 100%;
+  width: 100%;
+  grid-column: 1/4;
+  border: none;
+  border-radius: 0.5vw 0.5vw 0 0;
 `;
 
 export const Link = styled.a`
