@@ -15,3 +15,9 @@ export interface StyledComponentLink {
   color: string;
   link: string;
 }
+
+export interface InfoProject {
+  name: string;
+  img: string;
+  githubLink: string;
+}
