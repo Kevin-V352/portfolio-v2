@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   min-height: 100vh;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 45%);
-  grid-template-rows: auto;
-  grid-auto-rows: 50vh;
+  grid-template-rows: min-content;
+  grid-auto-rows: 46vh;
   justify-content: center;
-  align-items: center;
-  justify-items: center;
 `;
 
 export const Title = styled.h2`

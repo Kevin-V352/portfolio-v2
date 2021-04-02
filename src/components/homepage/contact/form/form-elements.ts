@@ -26,20 +26,21 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 15% 15% 60% 10%;
+  align-items: center;
   //Screen greater than 1025px - desktop
   @media (min-width: 1025px) {
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 15% 75% 10%;
   }
-  //Styles when the virtual keyboard is displayed
-  @media (max-width: 1025px) and (orientation: landscape) {
-    grid-template-rows: 20% 20% 50% 10%;
-  }
 `;
 
 export const GridItem = styled.div`
   grid-column: 1/3;
+  height: calc(100% - 1vw);
   padding: 0.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   //Screen greater than 1025px - desktop
   @media (min-width: 1025px) {
     grid-column: ${(props: GIProps) => props.position};
@@ -73,7 +74,7 @@ export const SubmitButton = styled.button`
   text-transform: uppercase;
   transition: var(--transition-fast);
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.9);
     border-color: var(--orange);
     color: var(--orange);
   }
@@ -81,7 +82,6 @@ export const SubmitButton = styled.button`
   @media (min-width: 1025px) {
     font-size: var(--big-font-size);
     &:hover {
-      transition: var(--transition-fast);
       transform: scale(1.01);
       border-color: var(--orange);
       color: var(--orange);

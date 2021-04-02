@@ -7,9 +7,9 @@ const GlobalStyles = createGlobalStyle`
     --normal-font-size: 4vw;
     
     //Global colors
-    --black: #1C1C1C;
+    --black: #1e2124;
 		--gray: #B6B6B6;
-		--orange: #E35E2A; 
+		--orange: 	#007acc; 
 		--transparent-gray: rgba(182, 182, 182, 0.3);
 
     //Global transitions
@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: #26282B;
+    background-color: 	#282b30;
 
     //Custom scrollbar - Chrome
 		&::-webkit-scrollbar {
