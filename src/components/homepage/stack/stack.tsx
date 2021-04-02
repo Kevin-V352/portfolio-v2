@@ -37,34 +37,30 @@ const Stack: FC = (): JSX.Element => {
 
   return (
     <S.Container>
-      <S.Column>
-        <S.GridItem
-          data-aos='fade-down'
-          data-aos-easing='fade-down'
-          data-aos-delay='100'
+      <S.Title
+        data-aos='fade-down'
+        data-aos-easing='fade-down'
+        data-aos-delay='100'
+      >
+        Tecnologías
+      </S.Title>
+      {stackIcons.map((item: ArrStyledComponent, index: number) => (
+        <AnimationBox
+          key={index}
+          type='fade-down'
+          delay={`${index}00`}
+          fullContent={false}
+          center={false}
         >
-          <S.Title>Tecnologías</S.Title>
-        </S.GridItem>
-        <S.IconContainer>
-          {stackIcons.map((item: ArrStyledComponent, index: number) => (
-            <AnimationBox
-              key={index}
-              type='fade-down'
-              delay={`${index}00`}
-              fullContent={false}
-              center={false}
-            >
-              <S.IconBox
-                fontColor={item.color}
-                active={index === activeIndex ? true : false}
-              >
-                {item.component}
-                <S.IconName>{item.name}</S.IconName>
-              </S.IconBox>
-            </AnimationBox>
-          ))}
-        </S.IconContainer>
-      </S.Column>
+          <S.IconBox
+            fontColor={item.color}
+            active={index === activeIndex ? true : false}
+          >
+            {item.component}
+            <S.IconName>{item.name}</S.IconName>
+          </S.IconBox>
+        </AnimationBox>
+      ))}
     </S.Container>
   );
 };

@@ -8,6 +8,7 @@ export const Container = styled.section`
   grid-template-rows: min-content;
   grid-auto-rows: 46vh;
   justify-content: center;
+  margin-bottom: 5vh;
 `;
 
 export const Title = styled.h2`

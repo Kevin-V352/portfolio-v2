@@ -16,28 +16,14 @@ const defaultConfigIcon: string = `
   }
 `;
 
-export const Container = styled.section`
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-export const Column = styled.div`
-  width: 90%;
-  //Screen smaller than 1025px - mobile
-  height: 80vh;
-  //Screen greater than 1025px - desktop
-  @media (min-width: 1025px) {
-    height: 90vh;
-  }
+export const Container = styled.div`
+  height: 100vh;
   display: grid;
-  grid-template-rows: 10% 90%;
-`;
-
-export const GridItem = styled.div`
-  display: flex;
+  grid-template-rows: min-content auto;
+  grid-template-columns: repeat(4, 22.5%);
+  justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
 `;
 
 export const Title = styled.h2`
@@ -48,20 +34,11 @@ export const Title = styled.h2`
   text-align: center;
   margin: 0;
   font-size: var(--big-font-size);
-`;
-
-export const IconContainer = styled.div`
-  display: grid;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(4, 22%);
+  grid-column: 1/5;
 `;
 
 export const IconBox = styled.div`
   /* border: 1px solid red; */
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
