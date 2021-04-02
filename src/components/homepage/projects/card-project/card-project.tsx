@@ -6,6 +6,7 @@ const CardProject: FC<InfoProject> = ({
   name,
   img,
   githubLink,
+  youtubeLink,
 }: InfoProject): JSX.Element => {
   const [onVideo, setOnVideo] = useState<boolean>(false);
 
@@ -13,14 +14,11 @@ const CardProject: FC<InfoProject> = ({
     <S.Container>
       <S.Name>{name}</S.Name>
       {onVideo ? (
-        <S.YoutubePlayer
-          src='https://www.youtube.com/embed/9YffrCViTVk'
-          allowFullScreen
-        />
+        <S.YoutubePlayer src={youtubeLink} allowFullScreen />
       ) : (
         <S.Image src={img} />
       )}
-      <S.Link>
+      <S.Link href={githubLink}>
         <S.GithubIcon />
         GitHub
       </S.Link>

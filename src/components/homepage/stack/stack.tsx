@@ -23,6 +23,7 @@ const Stack: FC = (): JSX.Element => {
       color: '#E8AD67',
       component: <S.StyledComponentsIcon />,
     },
+    { name: 'Node JS', color: '#7AAA1A', component: <S.NodeIcon /> },
   ];
 
   useEffect(() => {

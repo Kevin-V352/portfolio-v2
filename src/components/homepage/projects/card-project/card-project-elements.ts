@@ -8,6 +8,15 @@ const defaultConfigIcon: string = `
   margin-right: 0.5vw;
 `;
 
+export const Name = styled.h2`
+  font-size: var(--normal-font-size);
+  color: var(--gray);
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  grid-column: 1/4;
+`;
+
 export const Container = styled.div`
   height: 95%;
   width: 90%;
@@ -19,16 +28,10 @@ export const Container = styled.div`
   align-items: center;
   &:hover {
     transform: scale(1.1);
+    ${Name} {
+      color: var(--white);
+    }
   }
-`;
-
-export const Name = styled.h2`
-  font-size: var(--normal-font-size);
-  color: var(--gray);
-  text-transform: uppercase;
-  margin: 0;
-  text-align: center;
-  grid-column: 1/4;
 `;
 
 export const Image = styled.img`
@@ -59,6 +62,7 @@ export const Link = styled.a`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
   transition: var(--transition-fast);
   &:nth-child(3) {
     border-bottom-left-radius: 0.5vw;

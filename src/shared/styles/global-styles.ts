@@ -7,9 +7,10 @@ const GlobalStyles = createGlobalStyle`
     --normal-font-size: 4vw;
     
     //Global colors
-    --black: #1e2124;
+    --black: #1E2124;
 		--gray: #B6B6B6;
-		--orange: 	#007acc; 
+		--orange: #007ACC; 
+    --white: white;
 		--transparent-gray: rgba(182, 182, 182, 0.3);
 
     //Global transitions

@@ -67,6 +67,10 @@ export const SassIcon = styled(fa.FaSass)`
   ${defaultConfigIcon}
 `;
 
+export const NodeIcon = styled(fa.FaNodeJs)`
+  ${defaultConfigIcon}
+`;
+
 export const ReactIcon = styled(fa.FaReact)`
   ${defaultConfigIcon}
 `;

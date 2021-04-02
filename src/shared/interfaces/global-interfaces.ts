@@ -20,4 +20,5 @@ export interface InfoProject {
   name: string;
   img: string;
   githubLink: string;
+  youtubeLink: string;
 }
