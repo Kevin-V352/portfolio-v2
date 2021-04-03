@@ -1,3 +1,5 @@
+import React, { Dispatch, SetStateAction } from 'react';
+
 export interface ArrComponent {
   name: string;
   component: any;
@@ -21,4 +23,12 @@ export interface InfoProject {
   img: string;
   githubLink: string;
   youtubeLink: string;
+}
+
+export interface Context {
+  introductionY: number;
+  stackY: number;
+  projectsY: number;
+  contactY: number;
+  setCoordinatesY: any;
 }

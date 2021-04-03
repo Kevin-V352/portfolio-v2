@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   height: 100vh;
   width: 100%;
   display: grid;
   grid-template-rows: min-content auto;
   grid-template-columns: 90%;
   justify-content: center;
+  margin-bottom: 5vh;
 `;
 
 export const Title = styled.h2`

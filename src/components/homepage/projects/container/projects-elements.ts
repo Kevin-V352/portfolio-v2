@@ -6,7 +6,7 @@ export const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 45%);
   grid-template-rows: min-content;
-  grid-auto-rows: 46vh;
+  grid-auto-rows: 47vh;
   justify-content: center;
   margin-bottom: 5vh;
 `;

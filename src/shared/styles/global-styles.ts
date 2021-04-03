@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     //Global colors
     --black: #1E2124;
 		--gray: #B6B6B6;
-		--orange: #007ACC; 
+		--orange: #2AA5F6; 
     --white: white;
 		--transparent-gray: rgba(182, 182, 182, 0.3);
 

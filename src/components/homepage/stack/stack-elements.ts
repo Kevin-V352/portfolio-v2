@@ -16,7 +16,7 @@ const defaultConfigIcon: string = `
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled.section`
   height: 100vh;
   display: grid;
   grid-template-rows: min-content auto;

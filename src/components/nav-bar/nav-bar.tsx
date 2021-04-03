@@ -1,11 +1,18 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useContext } from 'react';
 
 import * as S from './nav-bar-elements';
 
-import { ArrComponent } from '../../shared/interfaces/global-interfaces';
+import {
+  ArrComponent,
+  Context,
+} from '../../shared/interfaces/global-interfaces';
+import { GlobalContex } from '../../context/contexts';
 
 const NavBar: FC = (): JSX.Element => {
   const [activePosition, setActivePostion] = useState<number>(0);
+  const { introductionY, stackY, projectsY, contactY } = useContext(
+    GlobalContex
+  ) as Context;
 
   const positionOptions: ArrComponent[] = [
     { name: 'Yo', component: <S.UserIcon /> },
