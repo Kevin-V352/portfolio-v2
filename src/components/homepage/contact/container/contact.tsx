@@ -1,9 +1,6 @@
 import React, { FC, useEffect, useRef, useContext } from 'react';
 import { GlobalContex } from '../../../../context/contexts';
-import {
-  Context,
-  Coordinates,
-} from '../../../../shared/interfaces/global-interfaces';
+import { Context } from '../../../../shared/interfaces/global-interfaces';
 import { getCoordinate } from '../../../../shared/helpers/functions';
 import Form from '../form/form';
 import Links from '../links/links';

@@ -30,7 +30,7 @@ const NavBar: FC = (): JSX.Element => {
   const activePositionIcon = (): void => {
     const coordinateY: number = window.pageYOffset;
     const positionArr: number[] = [introductionY, stackY, projectsY, contactY];
-    positionArr.map((position: number, index: number) => {
+    positionArr.forEach((position: number, index: number): void => {
       if (coordinateY > position) {
         setActivePostion(index);
       }

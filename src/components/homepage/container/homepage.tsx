@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC } from 'react';
 
 import * as S from './homepage-elements';
 
@@ -8,7 +8,6 @@ import Projects from '../projects/container/projects';
 import Introduction from '../introduction/introduction';
 
 const Homepage: FC = (): JSX.Element => {
-  const stack = useRef(null);
   return (
     <S.Container>
       <Introduction />

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import * as S from './form-elements';
 
-const Form = () => (
+const Form: FC = (): JSX.Element => (
   <S.Form>
     <S.GridItem position={'1/2'}>
       <S.Label>nombre</S.Label>
