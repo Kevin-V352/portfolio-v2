@@ -1,40 +1,31 @@
-import React, { FC } from 'react';
-import { InfoProject } from '../../../../shared/interfaces/global-interfaces';
-import { AnimationBox } from '../../../../shared/styled-elements/global-elements';
-import CardProject from '../card-project/card-project';
-
+import React, { FC, useEffect, useRef, useContext } from 'react';
 import * as S from './projects-elements';
+import CardProject from '../card-project/card-project';
+import { GlobalContex } from '../../../../context/contexts';
+import { arrProjects } from '../../../../shared/data/data';
+import { getCoordinate } from '../../../../shared/helpers/functions';
+import { AnimationBox } from '../../../../shared/styled-elements/global-elements';
+import {
+  Context,
+  InfoProject,
+} from '../../../../shared/interfaces/global-interfaces';
 
-const arrProjects: InfoProject[] = [
-  {
-    name: 'Horus - Wheater app',
-    img: './assets/projects-img/1.jpg',
-    githubLink: 'https://cutt.ly/Ycgfu8w',
-    youtubeLink: 'https://www.youtube.com/embed/MXN1nmL-DQU',
-  },
-  {
-    name: 'Cronos - Task manager',
-    img: './assets/projects-img/1.jpg',
-    githubLink: 'https://cutt.ly/QcgfKBW',
-    youtubeLink: 'https://www.youtube.com/embed/MXN1nmL-DQU',
-  },
-  {
-    name: 'Apolo - Song finder',
-    img: './assets/projects-img/1.jpg',
-    githubLink: 'https://cutt.ly/kcgfTJt',
-    youtubeLink: 'https://www.youtube.com/embed/MXN1nmL-DQU',
-  },
-  {
-    name: 'Six Games - Ecommerce videogames',
-    img: './assets/projects-img/1.jpg',
-    githubLink: 'https://cutt.ly/ucgfcR7',
-    youtubeLink: 'https://www.youtube.com/embed/MXN1nmL-DQU',
-  },
-];
+const Projects: FC = (): JSX.Element => {
+  const projectsRef = useRef<HTMLElement>(null);
+  const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
+  const relativePosition:
+    | number
+    | undefined = projectsRef.current?.getBoundingClientRect().top;
 
-const Projects = () => {
+  useEffect(() => {
+    setCoordinatesY({
+      ...coordinatesY,
+      projectsY: getCoordinate(relativePosition),
+    });
+  }, [relativePosition]);
+
   return (
-    <S.Container>
+    <S.Container ref={projectsRef}>
       <S.Title
         data-aos='fade-down'
         data-aos-easing='fade-down'

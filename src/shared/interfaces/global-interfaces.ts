@@ -3,6 +3,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 export interface ArrComponent {
   name: string;
   component: any;
+  index: number;
 }
 
 export interface ArrStyledComponent {
@@ -25,10 +26,14 @@ export interface InfoProject {
   youtubeLink: string;
 }
 
-export interface Context {
+export interface Coordinates {
   introductionY: number;
   stackY: number;
   projectsY: number;
   contactY: number;
+}
+
+export interface Context {
+  coordinatesY: Coordinates;
   setCoordinatesY: any;
 }

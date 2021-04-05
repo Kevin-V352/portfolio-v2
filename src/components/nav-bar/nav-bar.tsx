@@ -10,22 +10,29 @@ import { GlobalContex } from '../../context/contexts';
 
 const NavBar: FC = (): JSX.Element => {
   const [activePosition, setActivePostion] = useState<number>(0);
-  const { introductionY, stackY, projectsY, contactY } = useContext(
-    GlobalContex
-  ) as Context;
+  const { coordinatesY } = useContext(GlobalContex) as Context;
+  const { introductionY, stackY, projectsY, contactY } = coordinatesY;
 
   const positionOptions: ArrComponent[] = [
-    { name: 'Yo', component: <S.UserIcon /> },
-    { name: 'Stack', component: <S.StackCodeIcon /> },
-    { name: 'Proyectos', component: <S.CodeBranchIcon /> },
-    { name: 'Contacto', component: <S.ContactIcon /> },
+    { name: 'Yo', component: <S.UserIcon />, index: introductionY },
+    { name: 'Stack', component: <S.StackCodeIcon />, index: stackY },
+    { name: 'Proyectos', component: <S.CodeBranchIcon />, index: projectsY },
+    { name: 'Contacto', component: <S.ContactIcon />, index: contactY },
   ];
+
+  //Set the position in the document
+  const positionView = (coordinatesY: number): void => {
+    window.scrollTo({
+      top: coordinatesY,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <S.Container>
       <S.List>
         {positionOptions.map((option: ArrComponent, index: number) => (
-          <S.Item key={index}>
+          <S.Item key={index} onClick={() => positionView(option.index)}>
             <S.OptionContent active={activePosition === index ? true : false}>
               {option.component}
               <S.OptionText>{option.name}</S.OptionText>

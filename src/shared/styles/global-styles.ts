@@ -2,9 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
+    //Global font-size
     --big-font-size: 10vw;
     --medium-font-size: 5vw;
     --normal-font-size: 4vw;
+
+    @media (min-width: 1025px) {
+      --big-font-size: 2vw;
+      --normal-font-size: 1vw;
+    }
     
     //Global colors
     --black: #1E2124;
@@ -17,10 +23,8 @@ const GlobalStyles = createGlobalStyle`
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
 
-    @media (min-width: 1025px) {
-      --big-font-size: 2vw;
-      --normal-font-size: 1vw;
-    }
+    //Global border
+    --border-radius: 0.3vw;
   };
   body {
     padding: 0;

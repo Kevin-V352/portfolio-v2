@@ -8,6 +8,14 @@ const defaultConfigIcon: string = `
   margin-right: 0.5vw;
 `;
 
+// Default settings for image | youtube player
+const defaultBackgrounIcon: string = `
+  height: 100%;
+  width: 100%;
+  grid-column: 1/4;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+`;
+
 export const Name = styled.h2`
   font-size: var(--normal-font-size);
   color: var(--gray);
@@ -35,22 +43,21 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  grid-column: 1/4;
-  border-radius: 0.5vw 0.5vw 0 0;
+  ${defaultBackgrounIcon};
 `;
 
 export const YoutubePlayer = styled.iframe.attrs({
   title: 'YouTube video player',
-  allow:
-    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
+  allow: `
+  accelerometer; 
+  autoplay; 
+  clipboard-write; 
+  encrypted-media; 
+  gyroscope; 
+  picture-in-picture;`,
 })`
-  height: 100%;
-  width: 100%;
-  grid-column: 1/4;
+  ${defaultBackgrounIcon};
   border: none;
-  border-radius: 0.5vw 0.5vw 0 0;
 `;
 
 export const Link = styled.a`
@@ -65,10 +72,10 @@ export const Link = styled.a`
   text-decoration: none;
   transition: var(--transition-fast);
   &:nth-child(3) {
-    border-bottom-left-radius: 0.5vw;
+    border-bottom-left-radius: var(--border-radius);
   }
   &:nth-child(5) {
-    border-bottom-right-radius: 0.5vw;
+    border-bottom-right-radius: var(--border-radius);
   }
   &:hover {
     transform: scale(1.1);

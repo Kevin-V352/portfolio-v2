@@ -1,12 +1,20 @@
-import React, { FC, useState, useEffect } from 'react';
-
+import React, { FC, useState, useEffect, useRef, useContext } from 'react';
 import * as S from './stack-elements';
-
-import { ArrStyledComponent } from '../../../shared/interfaces/global-interfaces';
 import { AnimationBox } from '../../../shared/styled-elements/global-elements';
+import { GlobalContex } from '../../../context/contexts';
+import { getCoordinate } from '../../../shared/helpers/functions';
+import {
+  ArrStyledComponent,
+  Context,
+} from '../../../shared/interfaces/global-interfaces';
 
 const Stack: FC = (): JSX.Element => {
+  const stackRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
+  const relativePosition:
+    | number
+    | undefined = stackRef.current!.getBoundingClientRect().top;
 
   const stackIcons: ArrStyledComponent[] = [
     { name: 'HTML5', color: '#E35E2A', component: <S.Html5Icon /> },
@@ -36,8 +44,15 @@ const Stack: FC = (): JSX.Element => {
     }, 3000);
   }, [activeIndex]);
 
+  useEffect(() => {
+    setCoordinatesY({
+      ...coordinatesY,
+      stackY: getCoordinate(relativePosition),
+    });
+  }, [relativePosition]);
+
   return (
-    <S.Container>
+    <S.Container ref={stackRef}>
       <S.Title
         data-aos='fade-down'
         data-aos-easing='fade-down'
