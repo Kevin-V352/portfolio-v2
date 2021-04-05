@@ -14,7 +14,7 @@ const Stack: FC = (): JSX.Element => {
   const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
   const relativePosition:
     | number
-    | undefined = stackRef.current!.getBoundingClientRect().top;
+    | undefined = stackRef.current?.getBoundingClientRect().top;
 
   const stackIcons: ArrStyledComponent[] = [
     { name: 'HTML5', color: '#E35E2A', component: <S.Html5Icon /> },

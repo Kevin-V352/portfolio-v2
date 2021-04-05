@@ -1,5 +1,6 @@
 import { InfoProject } from '../interfaces/global-interfaces';
 
+//Array with information about my projects
 export const arrProjects: InfoProject[] = [
   {
     name: 'Horus - Wheater app',

@@ -17,7 +17,7 @@ const Contact: FC = (): JSX.Element => {
   useEffect(() => {
     setCoordinatesY({
       ...coordinatesY,
-      contactY: getCoordinate(contactRef.current!.getBoundingClientRect().top),
+      contactY: getCoordinate(contactRef.current?.getBoundingClientRect().top),
     });
   }, []);
 
