@@ -1,5 +1,4 @@
-import React, { FC, useState, useContext } from 'react';
-
+import React, { FC, useState, useEffect, useContext } from 'react';
 import * as S from './nav-bar-elements';
 
 import {
@@ -27,6 +26,20 @@ const NavBar: FC = (): JSX.Element => {
       behavior: 'smooth',
     });
   };
+
+  const activePositionIcon = (): void => {
+    const coordinateY: number = window.pageYOffset;
+    const positionArr: number[] = [introductionY, stackY, projectsY, contactY];
+    positionArr.map((position: number, index: number) => {
+      if (coordinateY > position) {
+        setActivePostion(index);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', activePositionIcon);
+  }, []);
 
   return (
     <S.Container>
