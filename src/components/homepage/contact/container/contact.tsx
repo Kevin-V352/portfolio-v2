@@ -9,13 +9,13 @@ import * as S from './contact-elements';
 
 const Contact: FC = (): JSX.Element => {
   const contactRef = useRef<HTMLElement>(null);
-  const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
+  let { coordinatesY } = useContext(GlobalContex) as Context;
 
   useEffect(() => {
-    setCoordinatesY({
-      ...coordinatesY,
-      contactY: getCoordinate(contactRef.current?.getBoundingClientRect().top),
-    });
+    const relativePosition:
+      | number
+      | undefined = contactRef.current?.getBoundingClientRect().top;
+    coordinatesY.contactY = getCoordinate(relativePosition);
   }, []);
 
   return (
