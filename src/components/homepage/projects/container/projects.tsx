@@ -12,17 +12,14 @@ import {
 
 const Projects: FC = (): JSX.Element => {
   const projectsRef = useRef<HTMLElement>(null);
-  const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
-  const relativePosition:
-    | number
-    | undefined = projectsRef.current?.getBoundingClientRect().top;
+  const { coordinatesY } = useContext(GlobalContex) as Context;
 
   useEffect(() => {
-    setCoordinatesY({
-      ...coordinatesY,
-      projectsY: getCoordinate(relativePosition),
-    });
-  }, [relativePosition]);
+    const relativePosition:
+      | number
+      | undefined = projectsRef.current?.getBoundingClientRect().top;
+    coordinatesY.projectsY = getCoordinate(relativePosition);
+  }, []);
 
   return (
     <S.Container ref={projectsRef}>
