@@ -50,12 +50,10 @@ const NavBar: FC = (): JSX.Element => {
     const positionY: number = window.pageYOffset;
     const positionArr = Object.values(coordinatesY);
     positionArr.forEach((position: number, index: number): void => {
-      if (positionY > position) {
-        console.log(index);
+      if (positionY + 1 > position) {
         setActivePostion(index);
       }
     });
-    /* const hola = positionArr.filter((position: number) => position >) */
   };
 
   useEffect(() => {
