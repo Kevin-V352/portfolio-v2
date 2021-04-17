@@ -11,10 +11,7 @@ import {
 const Stack: FC = (): JSX.Element => {
   const stackRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const { setCoordinatesY, coordinatesY } = useContext(GlobalContex) as Context;
-  const relativePosition:
-    | number
-    | undefined = stackRef.current?.getBoundingClientRect().top;
+  const { coordinatesY } = useContext(GlobalContex) as Context;
 
   const stackIcons: ArrStyledComponent[] = [
     { name: 'HTML5', color: '#E35E2A', component: <S.Html5Icon /> },
@@ -45,11 +42,11 @@ const Stack: FC = (): JSX.Element => {
   }, [activeIndex]);
 
   useEffect(() => {
-    setCoordinatesY({
-      ...coordinatesY,
-      stackY: getCoordinate(relativePosition),
-    });
-  }, [relativePosition]);
+    const relativePosition:
+      | number
+      | undefined = stackRef.current?.getBoundingClientRect().top;
+    coordinatesY.stackY = getCoordinate(relativePosition);
+  }, []);
 
   return (
     <S.Container ref={stackRef}>
