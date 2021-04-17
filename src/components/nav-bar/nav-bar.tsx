@@ -1,26 +1,45 @@
 import React, { FC, useState, useEffect, useContext } from 'react';
 import * as S from './nav-bar-elements';
-
 import {
   ArrComponent,
   Context,
+  Coordinates,
 } from '../../shared/interfaces/global-interfaces';
 import { GlobalContex } from '../../context/contexts';
 
 const NavBar: FC = (): JSX.Element => {
-  const [activePosition, setActivePostion] = useState<number>(0);
   const { coordinatesY } = useContext(GlobalContex) as Context;
-  const { introductionY, stackY, projectsY, contactY } = coordinatesY;
+  const [activePosition, setActivePostion] = useState<number>(0);
+  const [positionOfSections, setPositionOfSections] = useState<
+    Coordinates | undefined
+  >();
 
   const positionOptions: ArrComponent[] = [
-    { name: 'Yo', component: <S.UserIcon />, index: introductionY },
-    { name: 'Stack', component: <S.StackCodeIcon />, index: stackY },
-    { name: 'Proyectos', component: <S.CodeBranchIcon />, index: projectsY },
-    { name: 'Contacto', component: <S.ContactIcon />, index: contactY },
+    {
+      name: 'Yo',
+      component: <S.UserIcon />,
+      index: positionOfSections?.introductionY,
+    },
+    {
+      name: 'Stack',
+      component: <S.StackCodeIcon />,
+      index: positionOfSections?.stackY,
+    },
+    {
+      name: 'Proyectos',
+      component: <S.CodeBranchIcon />,
+      index: positionOfSections?.projectsY,
+    },
+    {
+      name: 'Contacto',
+      component: <S.ContactIcon />,
+      index: positionOfSections?.contactY,
+    },
   ];
 
   //Set the position in the document
-  const positionView = (coordinatesY: number): void => {
+  const positionView = (coordinatesY: number | undefined): void => {
+    console.log(coordinatesY);
     window.scrollTo({
       top: coordinatesY,
       behavior: 'smooth',
@@ -28,17 +47,20 @@ const NavBar: FC = (): JSX.Element => {
   };
 
   const activePositionIcon = (): void => {
-    const coordinateY: number = window.pageYOffset;
-    const positionArr: number[] = [introductionY, stackY, projectsY, contactY];
+    const positionY: number = window.pageYOffset;
+    const positionArr = Object.values(coordinatesY);
     positionArr.forEach((position: number, index: number): void => {
-      if (coordinateY > position) {
+      if (positionY > position) {
+        console.log(index);
         setActivePostion(index);
       }
     });
+    /* const hola = positionArr.filter((position: number) => position >) */
   };
 
   useEffect(() => {
     window.addEventListener('scroll', activePositionIcon);
+    setPositionOfSections(coordinatesY);
   }, []);
 
   return (
