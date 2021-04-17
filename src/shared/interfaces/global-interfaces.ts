@@ -1,9 +1,7 @@
-import React, { Dispatch, SetStateAction } from 'react';
-
 export interface ArrComponent {
   name: string;
   component: any;
-  index: number;
+  index: number | undefined;
 }
 
 export interface ArrStyledComponent {
@@ -27,13 +25,12 @@ export interface InfoProject {
 }
 
 export interface Coordinates {
-  introductionY: number;
-  stackY: number;
-  projectsY: number;
-  contactY: number;
+  introductionY: number | undefined;
+  stackY: number | undefined;
+  projectsY: number | undefined;
+  contactY: number | undefined;
 }
 
 export interface Context {
   coordinatesY: Coordinates;
-  setCoordinatesY: any;
 }
